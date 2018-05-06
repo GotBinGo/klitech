@@ -1,0 +1,27 @@
+
+<div *ngIf="movie">
+<div class="backdrop" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ movie.backdrop_path +')'}">
+</div>
+<div>
+    <div class="row details-container" >
+        <div style="background-color: black; width:100%; box-shadow: 0px -2px 46px 36px black;">
+            <div class="row">
+                <div class="col-2 col-xs-2">
+                </div>
+                <div class="col-sm-9 col-md-4">
+                    <img class="details-img" src="{{'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ movie.poster_path}}" alt="Photo of a Shiba Inu">
+                </div>
+                <div class="col-sm-12 col-md-6 mb-5">
+                    <h4 class="text-white" >{{movie.title}}  </h4>
+                    <span class="text-white">{{movie.vote_average}}/10</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-white mb-5">
+                    {{movie.overview}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+.details-container {
+    padding-top: 250px;
+}
+.row {
+    margin-right: 0px;
+    margin-left: 0px; 
+}
+.backdrop {
+    height: 100%;
+    padding-top: 7.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: -100;
+}
+.details-img {
+    width: 253px; 
+    margin-top:-100px;
+    margin-bottom: 50px; 
+    border-radius: 200px; 
+    box-shadow: 0px -2px 46px 36px black;
+}

@@ -1,0 +1,44 @@
+.example-card {
+    /*
+      display: inline-block;
+      margin: 20px;
+      vertical-align: top;
+      width: 400px;
+      */
+      margin-top:20px;
+      margin-bottom:20px;
+      background-color: #2e2e2e;
+    }
+    .card-title {
+      text-overflow: ellipsis; 
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 18px;
+  
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      margin-left: -16px;
+      color: white;
+    }
+    
+    p {
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      height: 125px;
+      font-size:14px;
+      color: white;
+    }
+    .card-container{
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: grey;
+    }
+    
+    .example-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
