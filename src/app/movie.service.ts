@@ -20,9 +20,23 @@ export class MovieService {
       .append('page', page).append('sort_by', 'popularity.desc'),
     });
   }
-  getMoviesDetails(id) {
+  getMovieDetails(id) {
     return this.http.get<any>(
       'https://api.themoviedb.org/3/movie/' + id,
+    {
+      params: new HttpParams().append('api_key', 'b225f1fefd947377677ecbb751002236'),
+    });
+  }
+  getPersonDetails(id) {
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/person/' + id,
+    {
+      params: new HttpParams().append('api_key', 'b225f1fefd947377677ecbb751002236'),
+    });
+  }
+  getMovieCredits(id) {
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/movie/' + id + '/credits',
     {
       params: new HttpParams().append('api_key', 'b225f1fefd947377677ecbb751002236'),
     });

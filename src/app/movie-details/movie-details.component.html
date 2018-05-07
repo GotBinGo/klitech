@@ -4,7 +4,7 @@
 </div>
 <div>
     <div class="row details-container" >
-        <div style="background-color: black; width:100%; box-shadow: 0px -2px 46px 36px black;">
+        <div class="main-container" >
             <div class="row">
                 <div class="col-2 col-xs-2">
                 </div>
@@ -19,6 +19,23 @@
             <div class="row">
                 <div class="col-12 text-white mb-5">
                     {{movie.overview}}
+                </div>
+            </div>
+            <div class="row" *ngIf="cast">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"  *ngFor="let actor of cast">
+                    <mat-card class="example-card" (click)=onActorClick(actor.id)> 
+                    <mat-card-content class="text-white text-center">
+                    <div class="actor-backdrop" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w185_and_h278_bestv2'+ actor.profile_path +')'}">
+                    </div>
+                    <!--    <img class="cast-img" src="{{'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ actor.profile_path}}" alt="Photo of a Shiba Inu">
+                    -->
+                    </mat-card-content>
+                    <div style="padding:10px; padding-top:0">
+                            <h6 class="text-white">{{actor.name}}</h6>
+                            <h6 class="text-white">{{actor.character}}</h6>
+                    </div>
+                    </mat-card>
+ 
                 </div>
             </div>
         </div>
