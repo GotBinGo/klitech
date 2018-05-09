@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 
 const appRoutes: Routes = [
+  { path: 'picker/:id',      component: MoviePickerComponent },
   { path: 'picker',      component: MoviePickerComponent },
   { path: 'movie/:id',      component: MovieDetailsComponent },
   { path: 'person/:id',      component: PersonDetailsComponent },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-movie-picker',
@@ -11,14 +11,23 @@ export class MoviePickerComponent implements OnInit {
 
   movies = [];
   page = 1;
+  id = null;
   Math;
-  constructor(private movieService: MovieService, private router: Router) {
+  constructor(private route: ActivatedRoute, private movieService: MovieService, private router: Router) {
     this.Math = Math;
   }
 
   ngOnInit() {
-    this.movieService.getMovies(this.page).subscribe(x => this.movies = this.movies.concat(x.results));
-    this.page++;
+    this.route.params.subscribe(x => {
+      this.id = x['id'];
+      this.addNextBatch();
+    });
+    window.addEventListener('scroll', x => {
+      const t = document.documentElement;
+      if (t.scrollHeight - t.clientHeight < t.scrollTop +  10) {
+        this.onScroll();
+      }
+    });
   }
 
   onClick(id) {
@@ -26,7 +35,15 @@ export class MoviePickerComponent implements OnInit {
   }
 
   onScroll() {
-    this.movieService.getMovies(this.page).subscribe(x => this.movies = this.movies.concat(x.results));
+    this.addNextBatch();
+  }
+
+  addNextBatch() {
+    if (!this.id) {
+      this.movieService.getMovies(this.page).subscribe(x => this.movies = this.movies.concat(x.results));
+    } else {
+      this.movieService.searchMovies(this.page, this.id).subscribe(y => this.movies = this.movies.concat(y.results));
+    }
     this.page++;
   }
 }
