@@ -53,4 +53,42 @@ export class MovieService {
       params: new HttpParams().append('api_key', this.api_key),
     });
   }
+  getSeries(page) {
+    if (!page) {
+      page = 1;
+    }
+
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/tv/popular',
+    {
+      params: new HttpParams().append('api_key', this.api_key)
+      .append('page', page).append('sort_by', 'popularity.desc'),
+    });
+  }
+  searchSeries(page, term) {
+    if (!page) {
+      page = 1;
+    }
+
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/search/tv',
+    {
+      params: new HttpParams().append('api_key', this.api_key)
+      .append('query', term).append('page', page).append('sort_by', 'popularity.desc'),
+    });
+  }
+  getSeriesDetails(id) {
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/tv/' + id,
+    {
+      params: new HttpParams().append('api_key', this.api_key),
+    });
+  }
+  getSeasonDetails(id, ep) {
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/tv/' + id + '/season/' + ep,
+    {
+      params: new HttpParams().append('api_key', this.api_key),
+    });
+  }
 }

@@ -1,0 +1,79 @@
+.example-card {
+    /*
+      display: inline-block;
+      margin: 20px;
+      vertical-align: top;
+      width: 400px;
+      */
+      margin-top:20px;
+      margin-bottom:20px;
+      
+      background-color: #2e2e2e;
+    }
+    .card-title {
+      text-overflow: ellipsis; 
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 18px;
+  
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      margin-left: -16px;
+      color: white;
+    }
+    
+    p {
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      height: 125px;
+      font-size:14px;
+      color: white;
+    }
+    .card-container{
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: grey;
+    }
+    
+    .example-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+
+
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .example-full-width {
+      width: 100%;
+    }
+    .mat-input-element
+    {
+    font: inherit;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit; 
+    font-weight: bold;
+  }
+  .inpuc {
+    margin-top: 10px;
+    border-bottom: 2px solid black;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}

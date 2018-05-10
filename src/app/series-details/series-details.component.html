@@ -1,0 +1,47 @@
+
+<div *ngIf="movie">
+<div class="backdrop" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ movie.backdrop_path +')'}">
+</div>
+<div>
+    <div class="row details-container" >
+        <div class="main-container" >
+            <div class="row">
+                <div class="col-2 col-xs-2">
+                </div>
+                <div class="col-sm-9 col-md-4">
+                    <img class="details-img" src="{{'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ movie.poster_path}}" alt="Photo of a Shiba Inu">
+                </div>
+                <div class="col-sm-12 col-md-6 mb-5">
+                    <h3 class="text-white" >{{movie.title}}  </h3>
+                    <br>
+                    <h4 class="text-white">{{movie.vote_average}}/10</h4>
+                    <span class="text-white">{{movie.vote_count}} votes</span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 text-white mb-5">
+                    {{movie.overview}}
+                </div>
+            </div>
+            <div class="row" *ngIf="movie">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"  *ngFor="let actor of movie.seasons">
+                    <mat-card class="example-card" (click)=onActorClick(actor.season_number)> 
+                    <mat-card-content class="text-white text-center">
+                    <div class="actor-backdrop" [ngStyle]="{ 'background-image': 'url(' + (actor.poster_path ? ('https://image.tmdb.org/t/p/w185_and_h278_bestv2'+ actor.poster_path) : 'http://via.placeholder.com/200x300') + ')'}">
+                    </div>
+                    <!--    <img class="cast-img" src="{{'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ actor.profile_path}}" alt="Photo of a Shiba Inu">
+                    -->
+                    </mat-card-content>
+                    <div style="padding:10px; padding-top:0">
+                            <h6 class="text-white">{{actor.name}}</h6>
+                            <h6 class="text-white">{{actor.character}}</h6>
+                    </div>
+                    </mat-card>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

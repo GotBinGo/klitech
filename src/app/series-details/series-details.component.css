@@ -1,0 +1,54 @@
+.details-container {
+    padding-top: 250px;
+}
+.row {
+    margin-right: 0px;
+    margin-left: 0px; 
+}
+.backdrop {
+    height: 100%;
+    padding-top: 7.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: -100;
+}
+.details-img {
+    width: 253px; 
+    margin-top:-100px;
+    margin-bottom: 50px; 
+    border-radius: 200px; 
+    box-shadow: 0px -2px 46px 36px #0f0f0f;
+}
+
+.cast-img {
+    width: 53px; 
+}
+
+.mat-card {
+    background-color: #383838;
+}
+.main-container {
+    background-color: #0f0f0f;
+    width:100%;
+    box-shadow: 0px -2px 46px 36px #0f0f0f;
+}
+
+.example-card {
+    height: 330px;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding: 0;
+}
+
+.actor-backdrop {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+}
