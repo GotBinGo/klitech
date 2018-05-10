@@ -1,5 +1,18 @@
+
 <div class="row card-container" (scroll)="onScroll()">
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of movies.slice(0, 12*(Math.floor(movies.length/12)))">
+
+<div class="col-12">
+    <form (keydown)="keyDownFunction($event, box.value)">
+    <div class="row">
+  <div class="col-4">
+  </div>
+  <div class="col-4 inpuc">
+  <input #box placeholder="Keresés" type="text" class="text-black col-12 mat-input-element">
+</div>
+</div>
+</form>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of movies.slice(0, 12*(Math.floor(movies.length/12)))">
     <mat-card class="example-card" (click)="onClick(movie.id)">
       <mat-card-header>
         <!--<div mat-card-avatar class="example-header-image"></div>-->

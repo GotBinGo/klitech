@@ -43,3 +43,37 @@
       background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
       background-size: cover;
     }
+
+
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .example-full-width {
+      width: 100%;
+    }
+    .mat-input-element
+    {
+    font: inherit;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit; 
+    font-weight: bold;
+  }
+  .inpuc {
+    margin-top: 10px;
+    border-bottom: 2px solid black;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}

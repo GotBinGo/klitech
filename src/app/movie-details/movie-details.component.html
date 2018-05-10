@@ -12,8 +12,12 @@
                     <img class="details-img" src="{{'https://image.tmdb.org/t/p/w600_and_h900_bestv2'+ movie.poster_path}}" alt="Photo of a Shiba Inu">
                 </div>
                 <div class="col-sm-12 col-md-6 mb-5">
-                    <h4 class="text-white" >{{movie.title}}  </h4>
-                    <span class="text-white">{{movie.vote_average}}/10</span>
+                    <h3 class="text-white" >{{movie.title}}  </h3>
+                    <br>
+                    <h4 class="text-white">{{movie.vote_average}}/10</h4>
+                    <span class="text-white">{{movie.vote_count}} votes</span>
+                    <br>
+                    <span class="text-white">{{movie.runtime}} minutes</span>
                 </div>
             </div>
             <div class="row">

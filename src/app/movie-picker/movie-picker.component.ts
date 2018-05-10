@@ -8,7 +8,6 @@ import {Router, ActivatedRoute} from '@angular/router';
   styleUrls: ['./movie-picker.component.css']
 })
 export class MoviePickerComponent implements OnInit {
-
   movies = [];
   page = 1;
   id = null;
@@ -45,5 +44,13 @@ export class MoviePickerComponent implements OnInit {
       this.movieService.searchMovies(this.page, this.id).subscribe(y => this.movies = this.movies.concat(y.results));
     }
     this.page++;
+  }
+  keyDownFunction(event, term) {
+    if (event.keyCode === 13) {
+      this.movies = [];
+      this.page = 1;
+      this.router.navigate(['/picker/' + term]);
+      event.preventDefault();
+    }
   }
 }
